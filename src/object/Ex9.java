@@ -25,6 +25,27 @@ public class Ex9 {
 		System.out.println(myInt);
 		System.out.println(i);
 		
+		Long myLong = (long) 1234567890;
+		long lg = myLong;
+		System.out.println(myLong);
+		System.out.println(lg);
+		
+		Float myFloat = (float) 1111111111111111.22222;
+		float ft = myFloat;
+		System.out.println(myFloat);
+		System.out.println(ft);
+		
+		Double myDouble = (double) 7777777777777777.8888;
+		double db = myDouble;
+		System.out.println(myDouble);
+		System.out.println(db);
+		
+		Boolean myBl = true;
+		boolean bl = myBl;
+		System.out.println(myBl);
+		System.out.println(bl);
+		
+		// Don't know how to do this for Void and void
 	}
 
 }
