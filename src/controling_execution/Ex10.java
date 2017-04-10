@@ -13,8 +13,8 @@ import java.util.Arrays;
 
 public class Ex10 {
 	public static void main(String args[]) {
-		showVampireNumber1(10);
-		// showVampireNumber1(Integer.parseInt(args[0]));
+		// showVampireNumber1(12);
+		showVampireNumber1(Integer.parseInt(args[0]));
 	}
 
 	static void showVampireNumber(int digits) {
@@ -22,27 +22,27 @@ public class Ex10 {
 		if (digits < 2 || digits % 2 != 0) {
 			System.out.println("Please input an even number.");
 		} else {
-			int num1 = 2 * (int) Math.pow(10, (digits / 2 - 1));
+			long num1 = 2 * (long) Math.pow(10, (digits / 2 - 1));
 			// System.out.println(num1);
-			int min = (int) Math.pow(10, digits - 1);
-			int max = (int) Math.pow(10, digits) - 1;
+			long min = (long) Math.pow(10, digits - 1);
+			long max = (long) Math.pow(10, digits) - 1;
 
 			System.out.println("min: " + min);
 			System.out.println("max: " + max);
 
-			for (int num = min; num <= max; num++) {
+			for (long num = min; num <= max; num++) {
 				// System.out.println("num: " + num);
 
-				String numString = Integer.toString(num);
+				String numString = Long.toString(num);
 				while (num1 < Math.pow(10, digits / 2)) {
 					boolean num1Valid = true;
 					boolean num2Valid = true;
 					// System.out.println(num + " % " + num1 + ": " + num %
 					// num1);
 					if (num % num1 == 0) {
-						int num2 = num / num1;
+						long num2 = num / num1;
 
-						String num1String = Integer.toString(num1);
+						String num1String = Long.toString(num1);
 						char[] num1Chars = num1String.toCharArray();
 						for (char c : num1Chars) {
 							if (numString.indexOf(c) == -1) {
@@ -51,7 +51,7 @@ public class Ex10 {
 							}
 						}
 
-						String num2String = Integer.toString(num2);
+						String num2String = Long.toString(num2);
 						char[] num2Chars = num2String.toCharArray();
 						for (char c : num2Chars) {
 							if (numString.indexOf(c) == -1) {
@@ -92,37 +92,37 @@ public class Ex10 {
 		if (digits < 2 || digits % 2 != 0) {
 			System.out.println("Please input an even number.");
 		} else {
-			int minNum1 = 2 * (int) Math.pow(10, (digits / 2 - 1));
-			int num1 = minNum1;
+			long minNum1 = 2 * (long) Math.pow(10, (digits / 2 - 1));
+			long num1 = minNum1;
 			// System.out.println(num1);
-			int min = (int) Math.pow(10, digits - 1);
-			int max = (int) Math.pow(10, digits) - 1;
+			long min = (long) Math.pow(10, digits - 1);
+			long max = (long) Math.pow(10, digits) - 1;
 
-			 System.out.println("min: " + min);
-			 System.out.println("max: " + max);
+			System.out.println("min: " + min);
+			System.out.println("max: " + max);
 
-			int found = 0;
-			int lastFound = 0;
+			long found = 0;
+			long lastFound = 0;
 			String outputStr = "";
-			for (int num = min; num <= max; num++) {
-//				 System.out.println("num: " + num);
+			for (long num = min; num <= max; num++) {
+				// System.out.println("num: " + num);
 
-				String numString = Integer.toString(num);
+				String numString = Long.toString(num);
 				while (num1 < Math.pow(10, digits / 2)) {
 					boolean num1Valid = true;
 					boolean num2Valid = true;
 					// System.out.println(num + " % " + num1 + ": " + num %
 					// num1);
 					if (num % num1 == 0) {
-						int num2 = num / num1;
+						long num2 = num / num1;
 
 						if ((num1 % 10 == 0) && (num2 % 10) == 0) {
 							num1++;
 							continue;
 						}
 
-						String num1String = Integer.toString(num1);
-						String num2String = Integer.toString(num2);
+						String num1String = Long.toString(num1);
+						String num2String = Long.toString(num2);
 						char[] allChars = (num1String + num2String).toCharArray();
 						char[] numChars = numString.toCharArray();
 						Arrays.sort(allChars);
@@ -161,7 +161,7 @@ public class Ex10 {
 // https://en.wikipedia.org/wiki/Vampire_number
 /*
  * n Count of vampire numbers of length n 4 7, 6 148, 8 3228, 10 108454, 12
- * 4390670 14 208423682
+ * 4390670, 14 208423682
  */
 // An important theoretical result found by Pete Hartley:
 // If x·y is a vampire number then x·y == x+y (mod 9)
